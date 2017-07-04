@@ -1,0 +1,9 @@
+{
+  "name": "smart-panda",
+  "version": "1.0.0",
+  "description": "Service who count POST req and return every GET req ",
+  "main": "smart-panda.js",
+  "dependencies": {
+    "httpdispatcher": "^1.0.0"
+  }
+}
