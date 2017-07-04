@@ -2,7 +2,7 @@
 //  In the end the function return a random path compare to the random num that she get.
 function ExtractFilePath(files){
            var imgAr = files;
-           var path = '/root/resources/'; //  images dir
+           var path = '/tmp/resources/'; //  images dir
            var num = Math.floor( Math.random() * imgAr.length );
            var img = imgAr[ num ];
            var img_path = path + img;
