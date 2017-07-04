@@ -9,7 +9,7 @@
   copy: src=etc/init/img-panda.conf dest=/etc/init/ owner=root group=root mode=644
   
 - name: start img-panda service 
- service:
+  service:
     name: img-panda
     state: started
  
