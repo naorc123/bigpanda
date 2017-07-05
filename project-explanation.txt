@@ -28,6 +28,8 @@ The project build from 3 missions:
      This part is a bonus. for this I used in bash scripts called deploy-bonus.sh (he have a decent --help).
      I creat a 2 new ansible role named util-img-panda.yml,util-smart-panda.yml,
      So, if we wand to install only imag/smart service we just tell the script and he will execute the relevant .yml role.
+     Plus, the base.yml is configured to allow excute for deploy-bonus.sh.
+     So when the machine is up all we need to do is run the script and choose whats we wand.
      
   
  It's was fun!
