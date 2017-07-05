@@ -1,0 +1,14 @@
+---
+- name: util-smart-panda
+  hosts: all
+  become: yes
+  pre_tasks:
+    - name: Set hostname
+      hostname: name={{inventory_hostname}}
+
+- name: Base smart panda services
+  hosts: base
+  become: yes
+  roles:
+    - { role: nodejs, tags: nodejs }
+    - { role: smart-panda, tags: smart-panda }
