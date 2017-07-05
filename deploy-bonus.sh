@@ -1,6 +1,3 @@
-exit='0'
-while [[ $exit -ne '-1' ]]
-do
 if [ $# -eq 0 ]
         then
 
@@ -14,18 +11,15 @@ case $choise in
 1*)
         echo "Deploying img-panda service..."
         ansible-playbook util-img-panda.yml -i dev/hosts
-        exit="-1"
 ;;
 2*)
         echo "Deploying smart-panda service..."
         ansible-playbook util-smart-panda.yml -i dev/hosts
-        exit="-1"
 ;;
 3*)
         echo "Deploying all..."
         ansible-playbook util-img-panda.yml -i dev/hosts
         ansible-playbook util-smart-panda.yml -i dev/hosts
-        exit="-1"
 ;;
 --h*)
         echo -e "need help? OK...\n\tFor deploy only img-panda service(return random image) insert '1'"
@@ -33,4 +27,3 @@ case $choise in
         echo -e "\tFor deploy both of them(recommended) insert '3'"
 ;;
 esac
-done
