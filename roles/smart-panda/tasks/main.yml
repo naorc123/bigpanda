@@ -1,15 +1,15 @@
 ---
-- name: copy img-panda service
-  copy: src=img-panda dest=/tmp/ owner=root group=root mode=755
+- name: copy smart-panda service
+  copy: src=smart-panda dest=/tmp/ owner=root group=root mode=755
 
 - name: npm install
-  npm: path=/tmp/img-panda
+  npm: path=/tmp/smart-panda
   
-- name: configure img-panda service
-  copy: src=etc/init/img-panda.conf dest=/etc/init/ owner=root group=root mode=644
+- name: configure smart-panda service
+  copy: src=roles/smart-panda/files/smart-panda/smart-panda.conf dest=/etc/init/ owner=root group=root mode=644
   
-- name: start img-panda service 
+- name: start smart-panda service 
  service:
-    name: img-panda
+    name: smart-panda
     state: started
  
