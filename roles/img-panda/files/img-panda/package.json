@@ -1,7 +1,7 @@
 {
   "name": "img-panda",
   "version": "1.0.0",
-  "description": "service eho return random image from folder",
+  "description": "service who return random image from folder",
   "main": "img-panda.js",
   "dependencies": {
     "httpdispatcher": "^1.0.0"
