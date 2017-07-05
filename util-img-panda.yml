@@ -1,15 +1,14 @@
-
 ---
-- name: util-img-panda 
+- name: util-smart-panda
   hosts: all
-  sudo: yes
+  become: yes
   pre_tasks:
     - name: Set hostname
       hostname: name={{inventory_hostname}}
 
-- name: Base img-panda services
+- name: Base smart panda services
   hosts: base
-  sudo: yes
+  become: yes
   roles:
     - { role: nodejs, tags: nodejs }
-    - { role: img-panda, tags: img-panda }
+    - { role: smart-panda, tags: smart-panda }
