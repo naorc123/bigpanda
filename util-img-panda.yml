@@ -1,0 +1,15 @@
+
+---
+- name: util-img-panda 
+  hosts: all
+  sudo: yes
+  pre_tasks:
+    - name: Set hostname
+      hostname: name={{inventory_hostname}}
+
+- name: Base img-panda services
+  hosts: base
+  sudo: yes
+  roles:
+    - { role: nodejs, tags: nodejs }
+    - { role: img-panda, tags: img-panda }
