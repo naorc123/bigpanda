@@ -6,7 +6,7 @@
   npm: path=/tmp/img-panda
   
 - name: configure img-panda service
-  copy: src=etc/init/img-panda.conf dest=/etc/init/ owner=root group=root mode=644
+  copy: src=roles/img-panda/files/img-panda/img-panda.conf dest=/etc/init/ owner=root group=root mode=644
   
 - name: start img-panda service 
  service:
