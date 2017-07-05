@@ -30,7 +30,7 @@ case $choise in
 --h*)
         echo -e "need help? OK...\n\tFor deploy only img-panda service(return random image) insert '1'"
         echo -e "\tFor deploy only smart-panda service(count POST req and return in GET req) insert '2'"
-        echo -e "\tFor deploy both of them(recommended) inset '3'"
+        echo -e "\tFor deploy both of them(recommended) insert '3'"
 ;;
 esac
 done
