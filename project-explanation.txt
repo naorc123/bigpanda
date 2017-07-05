@@ -1,0 +1,36 @@
+BigPanda DevOps Exercise:
+The project build from 3 missions:
+
+1)NodeJS/Python services:
+  In this exrcise I was used in NodeJS, build from 2 sub task.
+  
+  The first one, called img-panda suppused to return a random image on every GET request.
+  For my convenience and the good order I split up the code(in the file there is expalnation of each one):
+  img-panda.conf - the config file, who will config the service imself (will copy to /etc/init)
+  package.json - just the version and the dependencies.
+  img-config.json - the port to listen.
+  img-panda.js - the main code. if the client get to localhost:8080/img-panda, the dispather.On.Get routes to file router.js (/routes/router.js),
+  what she does is routes to GetRandomImage() which turn to imgAccess func in data/imgAccess/imgRetriever that read the images dir and return an arr of the files.
+  and to ExtractFilePath in util/ExtractFilePath with arr of files (that we get from imgRetriever). she calculate the dir lengh and return a random img_path.
+  in the she go back to img-panda.js and return random image path so the func can present random image.
+  
+  The second one, called smart-panda listenning to localhost:8081/smart-panda.
+  he has 2 importent func in smart-panda.js file.
+  dispatcher.onPost - count the POST req and add one each time he get.
+  dispatcher.onGet - every GET req he returns the POST req count.
+  plus he have the regular files like img-panda(smart-config.json,package.json,smart-panda.conf).
+  
+  2) Deployment:
+     ansible roles, to deploy the services I create role for each one of the service,
+     who copy the service file, copy to .etc.init the conf file and make sure that the service is started. 
+     
+  3) Wrapper:
+     This part is a bonus. for this I used in bash scripts called deploy-bonus.sh (he have a decent --help).
+     I creat a 2 new ansible role named util-img-panda.yml,util-smart-panda.yml,
+     So, if we wand to install only imag/smart service we just tell the script and he will execute the relevant .yml role.
+     
+  
+ It's was fun!
+ thanks!
+ 
+     
