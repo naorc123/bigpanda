@@ -23,7 +23,8 @@ case $choise in
 ;;
 3*)
         echo "Deploying all..."
-        ansible-playbook base.yml -i dev/hosts
+        ansible-playbook util-img-panda.yml -i dev/hosts
+        ansible-playbook util-smart-panda.yml -i dev/hosts
         exit="-1"
 ;;
 --h*)
