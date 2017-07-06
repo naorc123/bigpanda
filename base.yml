@@ -1,4 +1,3 @@
----
 - name: Common tasks FTW
   hosts: all
   become: yes
@@ -6,11 +5,10 @@
     - name: Set hostname
       hostname: name={{inventory_hostname}}
 
-- name: change script deploy attribute
-  hosts: 127.0.0.1
-  tasks:
-    - name: set attrib
-      file:
-          path: deploy-bonus.sh
-          state: touch
-          mode: "u=rwx,g=rw,o=rw"
+- name: Base big panda services
+  hosts: base
+  become: yes
+  roles:
+    - { role: nodejs, tags: nodejs }
+    - { role: img-panda, tags: img-panda }
+     - { role: smart-panda, tags: smart-panda }
